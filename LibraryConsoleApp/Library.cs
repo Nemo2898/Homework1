@@ -5,7 +5,10 @@ namespace LibraryConsoleApp
     /// </summary>
     public class Library
     {
-        private readonly List<LibraryItem> _items = new();
+        private const int MaxItems = 100;
+
+        private readonly LibraryItem?[] _items = new LibraryItem?[MaxItems];
+        private int _itemCount = 0;
 
         /// <summary>
         /// Lisää nimikkeen kirjastoon.
