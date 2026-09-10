@@ -20,10 +20,10 @@ namespace LibraryConsoleApp
         }
 
         /// <summary>
-        /// Palauttaa listan nimikkeistä, jotka ovat tällä hetkellä
+        /// Palauttaa taulukon nimikkeistä, jotka ovat tällä hetkellä
         /// lainattavissa (ILendable.IsAvailable == true).
         /// </summary>
-        public List<LibraryItem> GetAvailableItems()
+        public LibraryItem[] GetAvailableItems()
         {
             // TODO: Toteuta.
             throw new NotImplementedException();
