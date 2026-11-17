@@ -2,10 +2,10 @@
 {
     internal class Program
     {
-        // HUOM: Tämä demo käyttää Book- ja Dvd-luokkia, jotka on tarkoitus
-        // toteuttaa (esim. LibraryItem-pohjaisina, ILendable-rajapinnan
-        // toteuttavina luokkina). Ohjelma ei käänny ennen kuin ne on
-        // lisätty takaisin projektiin.
+        // NOTE: This demo uses the Book and Dvd classes, which are meant
+        // to be implemented (e.g. as LibraryItem-based classes that
+        // implement the ILendable interface). The program will not compile
+        // until they are added back to the project.
         static void Main(string[] args)
         {
             var library = new Library();
@@ -14,40 +14,40 @@
             library.Add(new Book("The Pragmatic Programmer", 1999, "Andrew Hunt", 352));
             library.Add(new Dvd("The Matrix", 1999, 136));
 
-            Console.WriteLine("Kaikki lainattavissa olevat nimikkeet:");
+            Console.WriteLine("All items available for lending:");
             PrintItems(library.GetAvailableItems());
 
             var item = library.FindByTitle("Clean Code");
             if (item is ILendable lendable)
             {
                 Console.WriteLine();
-                Console.WriteLine($"Lainataan: {item.Title}");
+                Console.WriteLine($"Lending: {item.Title}");
                 lendable.Lend();
 
-                Console.WriteLine("Yritetään lainata sama nimike uudelleen...");
+                Console.WriteLine("Trying to lend the same item again...");
                 try
                 {
                     lendable.Lend();
                 }
                 catch (InvalidOperationException ex)
                 {
-                    Console.WriteLine($"Virhe: {ex.Message}");
+                    Console.WriteLine($"Error: {ex.Message}");
                 }
             }
 
             Console.WriteLine();
-            Console.WriteLine("Lainattavissa olevat nimikkeet lainauksen jälkeen:");
+            Console.WriteLine("Items available for lending after lending:");
             PrintItems(library.GetAvailableItems());
 
             if (item is ILendable lendableToReturn)
             {
                 Console.WriteLine();
-                Console.WriteLine($"Palautetaan: {item?.Title}");
+                Console.WriteLine($"Returning: {item?.Title}");
                 lendableToReturn.Return();
             }
 
             Console.WriteLine();
-            Console.WriteLine("Lainattavissa olevat nimikkeet palautuksen jälkeen:");
+            Console.WriteLine("Items available for lending after return:");
             PrintItems(library.GetAvailableItems());
         }
 

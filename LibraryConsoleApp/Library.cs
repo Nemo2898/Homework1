@@ -1,7 +1,7 @@
 namespace LibraryConsoleApp
 {
     /// <summary>
-    /// Kirjasto, joka pitää kirjaa nimikkeistä.
+    /// A library that keeps track of items.
     /// </summary>
     public class Library
     {
@@ -11,31 +11,31 @@ namespace LibraryConsoleApp
         private int _itemCount = 0;
 
         /// <summary>
-        /// Lisää nimikkeen kirjastoon.
+        /// Adds an item to the library.
         /// </summary>
         public void Add(LibraryItem item)
         {
-            // TODO: Toteuta.
+            // TODO: Implement.
             throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Palauttaa taulukon nimikkeistä, jotka ovat tällä hetkellä
-        /// lainattavissa (ILendable.IsAvailable == true).
+        /// Returns an array of items that are currently
+        /// available for lending (ILendable.IsAvailable == true).
         /// </summary>
         public LibraryItem[] GetAvailableItems()
         {
-            // TODO: Toteuta.
+            // TODO: Implement.
             throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Etsii nimikkeen otsikon perusteella. Palauttaa null, jos
-        /// nimikettä ei löydy.
+        /// Finds an item by its title. Returns null if the
+        /// item is not found.
         /// </summary>
         public LibraryItem? FindByTitle(string title)
         {
-            // TODO: Toteuta.
+            // TODO: Implement.
             throw new NotImplementedException();
         }
     }

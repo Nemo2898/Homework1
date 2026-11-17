@@ -1,5 +1,4 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
 
 namespace LibraryConsoleApp
 {
@@ -17,7 +16,7 @@ namespace LibraryConsoleApp
             Pages = pages;
         }
 
-        public bool IsAvailable => Pages > 0;
+        public bool IsAvailable => !_isLent;
 
         public void Lend()
         {

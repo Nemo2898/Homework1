@@ -1,7 +1,7 @@
 namespace LibraryConsoleApp
 {
     /// <summary>
-    /// Abstrakti kantaluokka kaikille kirjaston nimikkeille.
+    /// Abstract base class for all library items.
     /// </summary>
     public abstract class LibraryItem
     {
@@ -16,8 +16,8 @@ namespace LibraryConsoleApp
         }
 
         /// <summary>
-        /// Palauttaa nimikkeen tiedot ihmisluettavassa muodossa.
-        /// TODO: Toteuta aliluokissa.
+        /// Returns the item's information in a human-readable format.
+        /// TODO: Implement in subclasses.
         /// </summary>
         public abstract string GetInfo();
     }

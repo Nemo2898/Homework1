@@ -1,23 +1,23 @@
 namespace LibraryConsoleApp
 {
     /// <summary>
-    /// Rajapinta lainattaville kirjaston nimikkeille.
+    /// Interface for lendable library items.
     /// </summary>
     public interface ILendable
     {
         /// <summary>
-        /// Kertoo, onko nimike tällä hetkellä lainattavissa.
+        /// Indicates whether the item is currently available.
         /// </summary>
         bool IsAvailable { get; }
 
         /// <summary>
-        /// Lainaa nimikkeen. Jos nimike on jo lainattu, heitetään
-        /// InvalidOperationException.
+        /// Lends the item. If the item is already lent, an
+        /// InvalidOperationException is thrown.
         /// </summary>
         void Lend();
 
         /// <summary>
-        /// Palauttaa nimikkeen kirjastoon.
+        /// Returns the item to the library.
         /// </summary>
         void Return();
     }
