@@ -33,7 +33,7 @@ namespace LibraryConsoleApp
 
         public override string GetInfo()
         {
-            return $"{Title} - {Author} - {Pages} pages";
+            return $"{Title} ({Year}) - {Author} - {Pages} pages";
         }
     }    
     
