@@ -17,7 +17,7 @@ namespace LibraryConsoleApp
         /// </summary>
         public void Add(LibraryItem item)
         {
-            // 找第一个空位放进去；满了就摔"馆满"
+            // Find the first empty slot; throw if the library is full.
             for (int i = 0; i < _items.Length; i++)
             {
                 if (_items[i] is null)
@@ -36,8 +36,8 @@ namespace LibraryConsoleApp
         /// </summary>
         public LibraryItem[] GetAvailableItems()
         {
-            // i is ILendable 同时排掉 null 槽位；
-            // 只有"签了契约且此刻没借出"的才放行
+            // 'i is ILendable' also skips null slots; only items that
+            // signed the contract and are not currently lent pass through.
             var result = new List<LibraryItem>();
             foreach (var i in _items)
             {
@@ -53,7 +53,7 @@ namespace LibraryConsoleApp
         /// </summary>
         public LibraryItem? FindByTitle(string title)
         {
-            // 一个个比对标题；没有就老老实实还 null
+            // Compare titles one by one; honestly return null when not found.
             foreach (var i in _items)
             {
                 if (i is not null && i.Title == title)
